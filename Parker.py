@@ -1,74 +1,81 @@
-'''Start Coding at 26/08/2017'''
-" (c) 2017 Dewnith Fernando. All rights reserved."
+'''Start Coding on 26/08/2017'''
+" (c) 2017, 2019 Dewnith Fernando. All rights reserved."
 
 import os
 
-print("* DvNET Parker [version 2017.08.26] Developed by Dewnith Fernando. *")
-print("* Copyright (c) 2019 Dewnith Fernando. All rights reserved.        *")
-#print("Type 'help' or 'credits' for more information.")
+# ''' START OF CREDITS INFORMATION '''
+print("* DvNET Parker [version 2019.06.15] Developed by Dewnith Fernando. *")
+print("* Copyrights (c) 2017-2019 Dewnith Fernando. All rights reserved.   *")
 print("")
+# ''' END OF CREDITS INFORMATION '''
 
 def main():
-    Userfile = open("Data/username.db", 'r')
-    name = Userfile.read() 
+    Username = open("Data/Username.db", 'r')
+    Username = Username.read() 
     print("")
-    ztext = input("> " + "What do you want " + name + ":>")
+    Text = input("> " + "What do you want " + Username + ":>")
 
-    if ztext == "what is your name":
-        print(">", "My name is Parker. Build 071.")
+    if Text == "what is your Username":
+        print(">", "My name is Parker. Build 250.")
         main()
 
-    elif ztext == "c":
+    elif Text == "credits":
         print("")
-        print("* ********************     CREDITS     ********************* *")
-        print("*                                                            *")
-        print("*                Developed by Dewnith Fernando.              *")
-        print("* Special Thank to Guido Van Rosem and Wijeya Pariganaka.    *")
-        print("*                                                            *")
-        print("* Copyrights (c) 2017 Dewnith Fernando. All righs reserved.  *")       
-        print("*                                                            *")
-        print("* ********************************************************** *")
+        print("* ***********************     CREDITS     *********************** *")
+        print("*                                                                 *")
+        print("*                  Developed by Dewnith Fernando.                 *")
+        print("*                                                                 *")
+        print("*      Special Thank to Guido Van Rosem and Wijeya Pariganaka.    *")
+        print("*                                                                 *")
+        print("* Copyrights (c) 2017-2019 Dewnith Fernando. All righs reserved.  *")       
+        print("*                                                                 *")
+        print("* *************************************************************** *")
         main()
 
     else:
         try:
-            dbf = open("Data/Database/" + ztext + ".db", "r")
-            dbfr = dbf.read()
+            dbFile = open("Data/Database/" + Text + ".db", "r")
+            dbData = dbFile.read()
         except IOError:
             print("")
-            print(">", name + ". Parker, don't know about " + ztext  +". But you can add information about " + ztext + "." )
+            print(">", Username + ", the Parker don't know about '" + Text  +"'. But you can add information about " + Text + "." )
             print("> If you want do it now type 'y' and press enter." + " Enter for none.")
             print()
             
-            abdf = input("> " + name + ", What is your choice :")
-            if abdf == "y":
-                print(">", "Ok " + name + ".")
-                print("***********" + ztext + "***********")
-                ed = input("> " + name + ", Enter description of " + ztext + ":")
-                obdf = open("Data/Database/" + ztext + ".db", "w+")
-                obdf.write(ed)
-                obdf.close()
-                print(">", name + ", I stored information about " + ztext + "in my Database.")
+            dbFile = input("> " + Username + ", What is your choice :")
+            if dbFile == "y":
+                print(">", "Ok " + Username + ". You selected yes.")
+                print("")
+                print("> ----------------------- " + Text + " ------------------------")
+                dbFile = input("> " + Username + ", Enter description of '" + Text + "':")
+                dbData = open("Data/Database/" + Text + ".db", "w+")
+                dbData.write(dbFile)
+                dbData.close()
+                print(">", Username + ", I stored information about '" + Text + "' in my Database.")
                 main()
             else:
-                print(">", "Ok " + name + ".")
+                print(">", "Ok " + Username + ". Your choice is my hapiness.")
                 main()
         else:
-            print(dbfr)
+            print(">",dbData)
             main()
 try:
-    Userfile = open("Data/username.db", "r")
-    name = Userfile.read()
+    Username = open("Data/Username.db", "r")
+    Username = Username.read()
 except IOError:
     print(">", "Hi, you're welcome user.")
-    nuname = input("> " + "Enter your user name here :")
+    Username = input("> " + "Enter your Username here :")
     os.mkdir("Data")
     os.mkdir("Data/Database")
-    nufile = open("Data/username.db", "w+")
-    nufile.write(nuname)
-    nufile.close()
+    newFile = open("Data/Username.db", "w+")
+    newFile.write(Username)
+    newFile.close()
+    print("")
+    print("* Type 'help' or 'credits' for more information.")
     main()
 else:
-    print(">", "Hi " + name + ", you're welcome to Parker")
+    print(">", "Hi " + Username + ", you're welcome to Parker.")
     main()
-""" Scripted Date : 2017.08.26 """
+
+""" Scripted Date  : 2017.08.26 """
+""" Script Updated : 2019.06.15 """
