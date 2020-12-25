@@ -1,6 +1,6 @@
 # Parker
 
-# It's my first computer program. Parker was first developed on 26 of August 2017.
+# It was my first computer program. Parker was first developed on 26 of August 2017.
 
 *Parker was created on 26 August 2017 by Dewnith Fernando [DvNET]
 This update was released on 18 January of 2020 by own me. [DvNET]
