@@ -8,7 +8,7 @@ Robot_Name = "Parker"
 ReleaseYear = 2021
 ReleaseMonth = 8
 ReleaseDate = 26
-BuildVersion = "1.0.2108.824"
+BuildVersion = "1.0.2108.924"
 
 # ''' START OF CREDITS INFORMATION '''
 print("* DvNET " + Robot_Name + " [version " + BuildVersion + "] Developed by Dewnith Fernando.")
@@ -623,18 +623,18 @@ def checkVALID():
         logIN()
     else:
         year0 = int(dec(getDATA('*f#hl76go*')))
-        year = datetime.date.today().year  
+        year = datetime.date.today().year
         month0 = int(dec(getDATA('*f#hk76go*')))
-        month = datetime.date.today().month                    
+        month = datetime.date.today().month
         day0 = int(dec(getDATA('*f#hd76go*')))
-        day = datetime.date.today().day 
+        day = datetime.date.today().day
         dayz = int(dec(getDATA('*f#hd75go*')))
         if(month0!=12):
             if(year0==year):
                 if(month0==month-1):
                     d=30-day0
                     d=30-d-day
-                    if d>0: Remain(d,dayz)        
+                    if d>0: Remain(d,dayz)
                     else: Expire(dayz)
                 else:
                     d=day-day0
@@ -643,21 +643,18 @@ def checkVALID():
             else:
                 Expire(d)
         else:
-            if(year0==year-1):
+            if(year0==year):
+                d=day-day0
+                d=30-d
+                Remain(d,dayz)                
+            else:
                 if(month==1):
                     d=30-day0
                     d=30-d-day
-                    if d>0: Remain(d,dayz)        
+                    if d>0: Remain(d,dayz)
                     else: Expire(dayz)
                 else:
-                    if(month0==month):
-                        d=day-day0
-                        d=30-d
-                        Remain(d,dayz)
-                    else:
-                        Expire(dayz)
-            else:
-                Expire(dayz)           
+                    Expire(dayz)
             
 #-- REMAIN LICENSE --
 def Remain(d,dayz): 
@@ -804,7 +801,7 @@ else:
 # -----------------------------------------------------------------------------------------------------
 
 
-""" Scripted Date  : 2017.08.26 """
-""" Script Updated : 2021.08.01 """
+""" Scripted Date : 2017.08.26 """
+""" Code Updated  : 2021.12.23 """
 
 ''' Ended Coding on 01/08/2021 '''
